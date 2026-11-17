@@ -1,1 +1,608 @@
 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<title>FAST SERVICE | Angola</title>
+
+<style>
+:root{
+--dark:#101827;
+--blue:#1769e0;
+--green:#16a36a;
+--light:#f3f6fb;
+--white:#fff;
+--text:#263247;
+--muted:#718096;
+--border:#e2e8f0;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:var(--light);color:var(--text)}
+header{
+background:var(--dark);color:white;padding:18px 6%;
+display:flex;justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:15px
+}
+.logo{font-size:24px;font-weight:900}
+.logo span{color:#36cf91}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#36cf91}
+button{cursor:pointer;border:0;border-radius:8px;padding:12px 17px;font-weight:bold}
+.primary{background:var(--blue);color:white}
+.success{background:var(--green);color:white}
+.hero{
+background:linear-gradient(120deg,#101827,#173d67);
+color:white;text-align:center;padding:75px 7%
+}
+.hero h1{font-size:clamp(30px,5vw,48px);margin-bottom:18px}
+.hero p{max-width:650px;margin:0 auto 25px;line-height:1.7;color:#d5e0ee}
+.search{
+max-width:650px;margin:auto;display:flex;gap:8px;
+background:white;padding:7px;border-radius:10px
+}
+.search input{flex:1;min-width:0;border:0;outline:0;padding:12px}
+section{padding:45px 6%}
+.section-title{margin-bottom:25px}
+.section-title h2{font-size:26px;color:var(--dark);margin-bottom:8px}
+.section-title p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{
+background:white;border:1px solid var(--border);
+border-radius:13px;padding:22px;
+box-shadow:0 3px 12px #00000008
+}
+.card h3{margin-bottom:10px;color:var(--dark)}
+.card p{color:var(--muted);line-height:1.6;font-size:14px}
+.icon{font-size:32px;margin-bottom:15px}
+.form-box{
+max-width:650px;margin:auto;background:white;
+padding:25px;border-radius:14px;border:1px solid var(--border)
+}
+.form-box h2{margin-bottom:20px}
+.form-box input,.form-box select,.form-box textarea{
+width:100%;padding:13px;margin:8px 0 15px;
+border:1px solid var(--border);border-radius:8px;outline:none
+}
+.form-box textarea{min-height:100px;resize:vertical}
+.form-box label{font-size:14px;font-weight:bold}
+.form-box button{margin-top:5px}
+.form-box form button{width:100%}
+.hidden{display:none!important}
+.badge{
+display:inline-block;padding:5px 9px;border-radius:20px;
+background:#e5f8ef;color:#148451;font-size:12px;margin-bottom:12px
+}
+.item{display:flex;flex-direction:column;gap:10px}
+.contact{
+text-decoration:none;text-align:center;background:#e5f8ef;
+color:#128451;padding:11px;border-radius:8px;font-weight:bold
+}
+.empty{text-align:center;color:var(--muted);padding:25px;grid-column:1/-1}
+footer{
+background:var(--dark);color:#d5e0ee;text-align:center;
+padding:30px 15px;line-height:1.8
+}
+footer strong{color:#36cf91}
+.danger{background:#fee2e2;color:#b91c1c}
+@media(max-width:600px){
+header{padding:16px}
+nav{width:100%;justify-content:space-between;gap:10px}
+nav a{font-size:12px}
+.hero{padding:55px 18px}
+section{padding:35px 17px}
+.search{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">FAST <span>SERVICE</span></div>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#servicos">Serviços</a>
+<a href="#oportunidades">Oportunidades</a>
+<a href="#cadastro">Registar</a>
+<a href="#painel">Minha conta</a>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+<h1>Oportunidades e serviços num só lugar.</h1>
+<p>
+Encontra profissionais, divulga os teus serviços
+e descobre novas oportunidades de trabalho.
+O teu próximo passo começa aqui!
+</p>
+<div class="search">
+<input id="searchInput" placeholder="Pesquisar serviços ou profissionais...">
+<button class="primary" onclick="searchServices()">Pesquisar</button>
+</div>
+</section>
+
+<section>
+<div class="section-title">
+<h2>O que procuras?</h2>
+<p>Escolhe o caminho que melhor se adapta às tuas necessidades.</p>
+</div>
+<div class="cards">
+<div class="card">
+<div class="icon">🛠️</div>
+<h3>Encontrar profissionais</h3>
+<p>Encontra pessoas qualificadas para resolver os teus problemas.</p>
+</div>
+<div class="card">
+<div class="icon">💼</div>
+<h3>Divulgar serviços</h3>
+<p>Apresenta as tuas competências e conquista novos clientes.</p>
+</div>
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Encontrar oportunidades</h3>
+<p>Descobre oportunidades de trabalho e prestação de serviços.</p>
+</div>
+</div>
+</section>
+
+<section id="servicos">
+<div class="section-title">
+<h2>Profissionais disponíveis</h2>
+<p>Conhece os serviços publicados na plataforma.</p>
+</div>
+<div class="cards" id="servicesList">
+<div class="empty">Ainda não existem serviços publicados.</div>
+</div>
+</section>
+
+<section id="oportunidades">
+<div class="section-title">
+<h2>Oportunidades</h2>
+<p>Descobre novas oportunidades profissionais.</p>
+</div>
+<div class="cards" id="jobsList">
+<div class="empty">Ainda não existem oportunidades publicadas.</div>
+</div>
+</section>
+
+<section id="cadastro">
+<div class="form-box">
+<h2>Criar uma conta</h2>
+<form id="registerForm">
+
+<label>Nome completo</label>
+<input id="name" required placeholder="O teu nome">
+
+<label>Email</label>
+<input id="email" type="email" required placeholder="O teu email">
+
+<label>Telefone / WhatsApp</label>
+<input id="phone" required placeholder="Ex: 244923000000">
+
+<label>Tipo de conta</label>
+<select id="role" required>
+<option value="">Selecionar</option>
+<option value="Profissional">Sou profissional</option>
+<option value="Cliente">Sou cliente</option>
+</select>
+
+<button class="primary" type="submit">Criar conta</button>
+</form>
+</div>
+</section>
+
+<section id="painel">
+<div class="section-title">
+<h2>Minha área</h2>
+<p>Gere os teus serviços e oportunidades.</p>
+</div>
+
+<div class="form-box hidden" id="userPanel">
+<h2 id="welcome"></h2>
+<p id="userInfo"></p>
+<br>
+<div id="professionalActions">
+<button class="success" onclick="showForm('serviceForm')">
++ Publicar serviço
+</button>
+</div>
+<br>
+<button class="primary" onclick="showForm('jobForm')">
++ Publicar oportunidade
+</button>
+<br><br>
+<button class="danger" onclick="logout()">Terminar sessão</button>
+</div>
+
+<div class="form-box" id="loginBox">
+<h3>Já tens uma conta?</h3>
+<p>Entra com o email utilizado no registo.</p>
+<form id="loginForm">
+<input id="loginEmail" type="email" required placeholder="O teu email">
+<button class="primary" type="submit">Entrar</button>
+</form>
+</div>
+</section>
+
+<section id="serviceSection" class="hidden">
+<div class="form-box">
+<h2>Publicar um serviço</h2>
+<form id="serviceForm">
+
+<label>Nome do serviço</label>
+<input id="serviceName" required placeholder="Ex: Eletricista">
+
+<label>Categoria</label>
+<select id="serviceCategory" required>
+<option value="">Selecionar categoria</option>
+<option>Construção</option>
+<option>Eletricidade</option>
+<option>Informática</option>
+<option>Beleza</option>
+<option>Educação</option>
+<option>Transporte</option>
+<option>Limpeza</option>
+<option>Design</option>
+<option>Outros</option>
+</select>
+
+<label>Descrição</label>
+<textarea id="serviceDescription" required placeholder="Descreve o serviço que ofereces"></textarea>
+
+<label>Preço indicativo (Kz)</label>
+<input id="servicePrice" placeholder="Ex: 15000">
+
+<button class="success" type="submit">Publicar serviço</button>
+</form>
+</div>
+</section>
+
+<section id="jobSection" class="hidden">
+<div class="form-box">
+<h2>Publicar oportunidade</h2>
+<form id="jobForm">
+
+<label>Título da oportunidade</label>
+<input id="jobTitle" required placeholder="Ex: Procuramos eletricista">
+
+<label>Localização</label>
+<input id="jobLocation" required placeholder="Ex: Luanda">
+
+<label>Descrição</label>
+<textarea id="jobDescription" required placeholder="Descreve os requisitos e condições"></textarea>
+
+<button class="success" type="submit">Publicar oportunidade</button>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer>
+<strong>FAST SERVICE</strong>
+<p>Conectamos talentos a oportunidades.</p>
+<p>© 2026 FAST SERVICE. Todos os direitos reservados.</p>
+<p>Angola</p>
+</footer>
+
+<script>
+function getData(key){
+try{
+return JSON.parse(localStorage.getItem(key)) || [];
+}catch{
+return [];
+}
+}
+
+function saveData(key,value){
+localStorage.setItem(key,JSON.stringify(value));
+}
+
+let currentUser=JSON.parse(localStorage.getItem("fs_user")||"null");
+
+function showForm(id){
+document.getElementById("serviceSection").classList.add("hidden");
+document.getElementById("jobSection").classList.add("hidden");
+
+const section=id==="serviceForm"?"serviceSection":"jobSection";
+document.getElementById(section).classList.remove("hidden");
+document.getElementById(section).scrollIntoView({behavior:"smooth"});
+}
+
+function updatePanel(){
+const panel=document.getElementById("userPanel");
+const login=document.getElementById("loginBox");
+
+if(!currentUser){
+panel.classList.add("hidden");
+login.classList.remove("hidden");
+return;
+}
+
+panel.classList.remove("hidden");
+login.classList.add("hidden");
+
+document.getElementById("welcome").textContent="Bem-vindo, "+currentUser.name;
+document.getElementById("userInfo").textContent=
+"Conta: "+currentUser.role+" | "+currentUser.email;
+
+document.getElementById("professionalActions").style.display=
+currentUser.role==="Profissional"?"block":"none";
+}
+
+document.getElementById("registerForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+const users=getData("fs_users");
+const email=document.getElementById("email").value.trim().toLowerCase();
+
+if(users.some(u=>u.email===email)){
+alert("Este email já está registado.");
+return;
+}
+
+const user={
+id:Date.now(),
+name:document.getElementById("name").value.trim(),
+email:email,
+phone:document.getElementById("phone").value.trim(),
+role:document.getElementById("role").value
+};
+
+users.push(user);
+saveData("fs_users",users);
+
+currentUser=user;
+localStorage.setItem("fs_user",JSON.stringify(user));
+
+updatePanel();
+alert("Conta criada com sucesso!");
+document.getElementById("painel").scrollIntoView({behavior:"smooth"});
+e.target.reset();
+});
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+const email=document.getElementById("loginEmail").value.trim().toLowerCase();
+const user=getData("fs_users").find(u=>u.email===email);
+
+if(!user){
+alert("Conta não encontrada neste dispositivo.");
+return;
+}
+
+currentUser=user;
+localStorage.setItem("fs_user",JSON.stringify(user));
+
+updatePanel();
+alert("Sessão iniciada!");
+e.target.reset();
+});
+
+function logout(){
+currentUser=null;
+localStorage.removeItem("fs_user");
+updatePanel();
+alert("Sessão terminada.");
+}
+
+document.getElementById("serviceForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+if(!currentUser||currentUser.role!=="Profissional"){
+alert("Entra numa conta profissional para publicar serviços.");
+return;
+}
+
+const services=getData("fs_services");
+
+services.unshift({
+id:Date.now(),
+owner:currentUser.name,
+phone:currentUser.phone,
+name:document.getElementById("serviceName").value.trim(),
+category:document.getElementById("serviceCategory").value,
+description:document.getElementById("serviceDescription").value.trim(),
+price:document.getElementById("servicePrice").value.trim()
+});
+
+saveData("fs_services",services);
+renderServices();
+
+e.target.reset();
+document.getElementById("serviceSection").classList.add("hidden");
+alert("Serviço publicado com sucesso!");
+});
+
+document.getElementById("jobForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+if(!currentUser){
+alert("Inicia sessão primeiro.");
+return;
+}
+
+const jobs=getData("fs_jobs");
+
+jobs.unshift({
+id:Date.now(),
+owner:currentUser.name,
+phone:currentUser.phone,
+title:document.getElementById("jobTitle").value.trim(),
+location:document.getElementById("jobLocation").value.trim(),
+description:document.getElementById("jobDescription").value.trim()
+});
+
+saveData("fs_jobs",jobs);
+renderJobs();
+
+e.target.reset();
+document.getElementById("jobSection").classList.add("hidden");
+alert("Oportunidade publicada com sucesso!");
+});
+
+function renderServices(){
+const list=document.getElementById("servicesList");
+const services=getData("fs_services");
+
+list.innerHTML="";
+
+if(!services.length){
+list.innerHTML='<div class="empty">Ainda não existem serviços publicados.</div>';
+return;
+}
+
+services.forEach(s=>{
+const card=document.createElement("div");
+card.className="card item";
+
+const title=document.createElement("h3");
+title.textContent=s.name;
+
+const category=document.createElement("span");
+category.className="badge";
+category.textContent=s.category;
+
+const description=document.createElement("p");
+description.textContent=s.description;
+
+const owner=document.createElement("p");
+owner.textContent="Profissional: "+s.owner;
+
+const price=document.createElement("p");
+price.textContent=s.price?"Preço: "+s.price+" Kz":"Preço sob consulta";
+
+const contact=document.createElement("a");
+contact.className="contact";
+contact.href="https://wa.me/"+s.phone.replace(/\D/g,"");
+contact.target="_blank";
+contact.rel="noopener";
+contact.textContent="Contactar pelo WhatsApp";
+
+card.append(title,category,description,owner,price,contact);
+list.appendChild(card);
+});
+}
+
+function renderJobs(){
+const list=document.getElementById("jobsList");
+const jobs=getData("fs_jobs");
+
+list.innerHTML="";
+
+if(!jobs.length){
+list.innerHTML='<div class="empty">Ainda não existem oportunidades publicadas.</div>';
+return;
+}
+
+jobs.forEach(j=>{
+const card=document.createElement("div");
+card.className="card item";
+
+const title=document.createElement("h3");
+title.textContent=j.title;
+
+const location=document.createElement("span");
+location.className="badge";
+location.textContent=j.location;
+
+const description=document.createElement("p");
+description.textContent=j.description;
+
+const owner=document.createElement("p");
+owner.textContent="Publicado por: "+j.owner;
+
+const contact=document.createElement("a");
+contact.className="contact";
+contact.href="https://wa.me/"+j.phone.replace(/\D/g,"");
+contact.target="_blank";
+contact.rel="noopener";
+contact.textContent="Tenho interesse";
+
+card.append(title,location,description,owner,contact);
+list.appendChild(card);
+});
+}
+
+function searchServices(){
+const query=document.getElementById("searchInput").value.trim().toLowerCase();
+
+renderServices();
+
+const services=getData("fs_services");
+const jobs=getData("fs_jobs");
+
+const filteredServices=services.filter(s=>
+(s.name+" "+s.category+" "+s.description+" "+s.owner).toLowerCase().includes(query)
+);
+
+const filteredJobs=jobs.filter(j=>
+(j.title+" "+j.location+" "+j.description).toLowerCase().includes(query)
+);
+
+const serviceList=document.getElementById("servicesList");
+const jobList=document.getElementById("jobsList");
+
+serviceList.innerHTML="";
+jobList.innerHTML="";
+
+if(!query){
+renderServices();
+renderJobs();
+return;
+}
+
+if(!filteredServices.length){
+serviceList.innerHTML='<div class="empty">Nenhum serviço encontrado.</div>';
+}else{
+const original=getData("fs_services");
+saveData("fs_services",filteredServices);
+renderServices();
+saveData("fs_services",original);
+}
+
+if(!filteredJobs.length){
+jobList.innerHTML='<div class="empty">Nenhuma oportunidade encontrada.</div>';
+}else{
+filteredJobs.forEach(j=>{
+const card=document.createElement("div");
+card.className="card item";
+
+const title=document.createElement("h3");
+title.textContent=j.title;
+
+const location=document.createElement("span");
+location.className="badge";
+location.textContent=j.location;
+
+const description=document.createElement("p");
+description.textContent=j.description;
+
+const contact=document.createElement("a");
+contact.className="contact";
+contact.href="https://wa.me/"+j.phone.replace(/\D/g,"");
+contact.target="_blank";
+contact.textContent="Tenho interesse";
+
+card.append(title,location,description,contact);
+jobList.appendChild(card);
+});
+}
+
+document.getElementById("servicos").scrollIntoView({behavior:"smooth"});
+}
+
+updatePanel();
+renderServices();
+renderJobs();
+</script>
+
+</body>
+</html>
+
