@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101827">
 <title>FAST SERVICE | Angola</title>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root {
   --dark:#101827;
@@ -541,7 +541,14 @@ function searchAll() {
 updatePanel();
 renderServices();
 renderJobs();
-</script>
+const SUPABASE_URL = "https://txdcmkyahukbkqqgkpra.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_epB-kCXgQeTluKnXs72R8w_ov8FPg71";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);</script>
 
 </body>
       </html>
